@@ -20,10 +20,10 @@ exports.largestPalindromeProduct = function(multiplicands, digits){
   for (var i = maxDigit; i >= minDigit; i--) {
     for (var j = maxDigit; j >= minDigit; j--) {
         product = i * j;
-        reverseProduct = parseInt(product.toString().split('').reverse().join(''));
+        reverseProduct = product.toString().split('').reverse().join('');
        // console.log("product: "+product);
         //console.log("reverse: "+reverseProduct);
-        if(product === reverseProduct) {
+        if(product == reverseProduct) {
             if(palindromeNumber < product) {
                 palindromeNumber = product;
                 factor_0 = i;
