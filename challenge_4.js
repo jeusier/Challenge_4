@@ -12,18 +12,30 @@ exports.largestPalindromeProduct = function(multiplicands, digits){
   var factor_1 = 0;
   var palindromeNumber = 0;
   // do your work here
+
+  //store the min and max digits for the numbers to be used
   var minDigit = Math.pow(10, (digits-1));
   var maxDigit = Math.pow(10, digits) - 1;
   //console.log("min: "+minDigit);
   //console.log("max: "+maxDigit);
 
+  /**
+  * Loop through to find the palindrome product of both factors
+  */
+
+  // loop through the first list of factors
   for (var i = maxDigit; i >= minDigit; i--) {
+    // loop through the second list of factors
     for (var j = maxDigit; j >= minDigit; j--) {
+        // multiply both factors
         product = i * j;
+        // get the palindrome of the product
         reverseProduct = product.toString().split('').reverse().join('');
        // console.log("product: "+product);
         //console.log("reverse: "+reverseProduct);
+        //if product is a palindrome, store as palindrome number
         if(product == reverseProduct) {
+            //sets palindrome product as new palindrome number if larger than current
             if(palindromeNumber < product) {
                 palindromeNumber = product;
                 factor_0 = i;

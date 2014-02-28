@@ -13,6 +13,8 @@ describe("The Largest Palindrome Product", function () {
   it("of two 3 digit numbers should be 906609", function () {
     var product = challenge_4.largestPalindromeProduct(2,3);
     expect(product.palindromeNumber).toEqual(906609);
+    expect([993,913]).toContain(product.factor_0);
+    expect([993,913]).toContain(product.factor_1);
   });
 
 });    
